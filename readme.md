@@ -37,13 +37,13 @@ Commands for setup:
    ```
 * Install packages you need to install on Termux
    ```sh
-  pkg install x11-repo
-  pkg install termux-x11-nightly
-  pkg install tur-repo
-  pkg install pulseaudio
-  pkg install proot-distro
-  pkg install wget
-  pkg install git 
+  pkg install x11-repo -y
+  pkg install termux-x11-nightly -y
+  pkg install tur-repo -y
+  pkg install pulseaudio -y
+  pkg install proot-distro -y
+  pkg install wget -y
+  pkg install git y
    ```
 ### 📲 INSTALLATION PARDUS <a name=installation></a>
 
@@ -73,12 +73,17 @@ Then update packages and install the requred packages.
 
 ```
 apt update && apt upgrade -y
-apt install sudo nano bash-completion neofetch ##neofetch is optional.
+apt install sudo nano bash-completion neofetch -y ##neofetch is optional.
 ```
 
 ## 👤 Adding users part  <a name=users></a>
-Run **adduser your_username and set password, enter on all the information form, and press y enter.**
-Then run **nano /etc/sudoers** and write **your_username ALL=(ALL:ALL) ALL** to root part. 
+```bash
+# adding user
+adduser your_username
+
+sudo usermod -aG sudo your_username
+
+```
 
 Then install desktops. 
 
@@ -94,16 +99,16 @@ Install desktops(Choose one):
 
 ```
 #xfce(tested):
-sudo apt install pardus-xfce-desktop
+sudo apt install pardus-xfce-desktop -y
 
 #gnome(tested):
-sudo apt install pardus-gnome-desktop
+sudo apt install pardus-gnome-desktop -y
 #after installation of gnome,
 for file in $(find /usr -type f -iname "*login1*"); do rm -rf $file
 done
 
 #kde(tested)
-sudo apt install kde-standard
+sudo apt install kde-standard -y
 ```
 
 Delete all text on os-release with **nano /etc/os-release** and change info debian to pardus:
