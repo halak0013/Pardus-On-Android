@@ -92,6 +92,10 @@ Then install desktops.
 Login to pardus with user:
 
 ```
+# In proot pardus
+su your_username
+
+# In termux
 pd login pardus --user YOUR_USERNAME
 ```
 
